@@ -1,6 +1,6 @@
 
 
-// 1.Reverse a stringa.
+// 1.Reverse a string
 // Write a function that takes a string as input and returns the string reversed
 // i.e. “Hello” will be returned as “olleH”
 
@@ -21,7 +21,7 @@ function reverseArray(initialArray){
     let reversedArray = [];
 
     for (let i = 0; i < initialArray.length; i++){
-        indexElementFromBackOfArray = initialArray[initialArray.length-1-i];
+        indexElementFromBackOfArray = initialArray[initialArray.length - 1 - i];
         reversedArray.push(indexElementFromBackOfArray);
     }
 
@@ -38,12 +38,69 @@ function compressArray(backwardsArray){
 // write a function that takes the string parameter being passed and capitalize the first letter of each word. Words can be separated by only one space.
 // i.e "hello world" to "Hello World"
 
-function capitalizeFirstLetterOfWords(){
-    stringToBeCapitalized = prompt("what words do you want capitalized?");
+/*
 
-    
+Capitalize first letter in string
+
+Find spaces in string
+
+move to character after string
+
+capitalize that character
+
+*/
+
+function identifyFirstCharacterAfterSpace(){
+
 }
 
+function capitalizeFirstLetterOfWords() {
+    let stringToBeCapitalized = prompt("what words do you want capitalized?");
+    let stringWithFirstLetterCapitalized = capitalizeFirstLetterInString(stringToBeCapitalized);
+
+    if(stringToBeCapitalized.includes(" ")) {
+        let arrayBeforeIdentifyingSpace = convertStringToArray(stringToBeCapitalized);
+        findSpaceCharacterInArray(arrayBeforeIdentifyingSpace);
+
+        return capitalizedString;
+    }
+    else {
+        console.log(stringWithFirstLetterCapitalized);
+    }
+
+}
+
+function findSpaceCharactersInArray(arrayWithSpaceCharacter){
+    
+    let indexOfSpaceCharacter = arrayWithSpaceCharacter.indexOf(" ");
+
+    console.log(indexOfSpaceCharacter);
+
+    // for(let i = 0; arrayWithSpaceCharacter.length; ){
+
+    // }
+}
+
+
+// function findSpaceCharacterInString(stringToBeCapitalized){
+
+//     if stringToBeCapitalized.includes(" "){
+
+//     }
+//     else {
+//        console.log("there is no need for capitalization");
+//     }
+
+//     for(let i = 0; i <= stringToBeCapitalized.length; i++) {
+//         let characterAfterSpace = stringToBeCapitalized.charAt(stringToBeCapitalized.includes(" "));
+//         console.log(characterAfterSpace);
+//     }
+
+// }
+
+// function capitalizeLetterAfterSpace() {
+
+// }
 
 
 // 3. Compress a string of characters
@@ -52,7 +109,7 @@ function capitalizeFirstLetterOfWords(){
 
 
 
-// Palindrome
+// 4. Palindrome
 // write a function that takes an input and checks to see if it is a palindrome and reports the result
 
 
