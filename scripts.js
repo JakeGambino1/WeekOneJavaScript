@@ -38,69 +38,36 @@ function compressArray(backwardsArray){
 // write a function that takes the string parameter being passed and capitalize the first letter of each word. Words can be separated by only one space.
 // i.e "hello world" to "Hello World"
 
-/*
-
-Capitalize first letter in string
-
-Find spaces in string
-
-move to character after string
-
-capitalize that character
-
-*/
-
-function identifyFirstCharacterAfterSpace(){
-
+function capitalizeFirstLetterOfEachWord(initialString){
+    initialString = prompt("What is the phrase?");
+    let initialArray = convertStringToArrayWithoutSpace(initialString);
+    let capitalizedArray = capitalizeFirstLetterOfEachArrayIndex(initialArray);
+    let newString = returnArrayBackToString(capitalizedArray);
+    console.log(newString);
 }
 
-function capitalizeFirstLetterOfWords() {
-    let stringToBeCapitalized = prompt("what words do you want capitalized?");
-    let stringWithFirstLetterCapitalized = capitalizeFirstLetterInString(stringToBeCapitalized);
+function convertStringToArrayWithoutSpace(initialString){
+    let initialArray = initialString.split(" ");
+    return initialArray;
+}
 
-    if(stringToBeCapitalized.includes(" ")) {
-        let arrayBeforeIdentifyingSpace = convertStringToArray(stringToBeCapitalized);
-        findSpaceCharacterInArray(arrayBeforeIdentifyingSpace);
+function capitalizeFirstLetterOfEachArrayIndex(initialArray){
+    let combinedParts = [];
 
-        return capitalizedString;
+    for(let i = 0; i < initialArray.length; i++){
+        let firstLetter = initialArray[i].charAt(0).toUpperCase();
+        let secondSectionOfWord = initialArray[i].slice(1);
+        let capitalizedArray = firstLetter + secondSectionOfWord;
+
+        combinedParts.push(capitalizedArray);
     }
-    else {
-        console.log(stringWithFirstLetterCapitalized);
-    }
-
+    return combinedParts;
 }
 
-function findSpaceCharactersInArray(arrayWithSpaceCharacter){
-    
-    let indexOfSpaceCharacter = arrayWithSpaceCharacter.indexOf(" ");
-
-    console.log(indexOfSpaceCharacter);
-
-    // for(let i = 0; arrayWithSpaceCharacter.length; ){
-
-    // }
+function returnArrayBackToString(capitalizedArray){
+    let newString = capitalizedArray.join(" ")
+    return newString;
 }
-
-
-// function findSpaceCharacterInString(stringToBeCapitalized){
-
-//     if stringToBeCapitalized.includes(" "){
-
-//     }
-//     else {
-//        console.log("there is no need for capitalization");
-//     }
-
-//     for(let i = 0; i <= stringToBeCapitalized.length; i++) {
-//         let characterAfterSpace = stringToBeCapitalized.charAt(stringToBeCapitalized.includes(" "));
-//         console.log(characterAfterSpace);
-//     }
-
-// }
-
-// function capitalizeLetterAfterSpace() {
-
-// }
 
 
 // 3. Compress a string of characters
