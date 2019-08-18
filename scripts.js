@@ -1,5 +1,3 @@
-
-
 // 1.Reverse a string
 // Write a function that takes a string as input and returns the string reversed
 // i.e. “Hello” will be returned as “olleH”
@@ -24,7 +22,6 @@ function reverseArray(initialArray){
         indexElementFromBackOfArray = initialArray[initialArray.length - 1 - i];
         reversedArray.push(indexElementFromBackOfArray);
     }
-
     return reversedArray;
 }
 
@@ -73,10 +70,69 @@ function returnArrayBackToString(capitalizedArray){
 // 3. Compress a string of characters
 // for example, input of "aaabbbbcccccc" becomes "3a4b5c"
 
+function compressString(stringToBeCompressed) {
+    // stringToBeCompressed = prompt("What can I compress for you?");
+    countSequentialClones(stringToBeCompressed);
+
+}
+
+function countSequentialClones(stringWhereInstancesAreCounted) {
+
+    let compressedLetters = [];
+
+    for (let i = 0; i < stringWhereInstancesAreCounted.length; i++) {
+        let count;
+
+        while(stringWhereInstancesAreCounted[i] == stringWhereInstancesAreCounted[i + 1]) {
+            count++;
+            console.log(count);
+        }
+
+        if (stringWhereInstancesAreCounted[i] == stringWhereInstancesAreCounted[i + 1]) {
+            count++;
+            compressedLetters.push(count + i);
+        }
+        else {
+            count = 1;
+            compressedLetters.push(count + i);
+        }
+    }
+    console.log(compressedLetters);
+}
+
+// compressString("aaabbc");
+
 
 
 
 // 4. Palindrome
 // write a function that takes an input and checks to see if it is a palindrome and reports the result
 
+/*
+LOGIC SEQUENCE
+grab value at str[0], compare to value at str[str.length - 1];
 
+if they are equal, check [1] to str.length - 1]
+
+str.charAt(stringToPalindromeCheck.length - i - 1)
+
+*/
+
+function palindromeCheck(stringToPalindromeCheck){
+    // for(let i = 0; i === stringToPalindromeCheck.length - i - 1; i++){
+    //     if(i == stringToPalindromeCheck.length - 1){ 
+            
+    //     }
+    //     else {
+
+    //     }
+    // }
+    let reversedString = stringToPalindromeCheck.split("").reverse().join("");
+
+    if (reversedString == stringToPalindromeCheck){
+        console.log("yes, " + stringToPalindromeCheck + " is a palindrome.");
+    }
+    else {
+        console.log("no, " + stringToPalindromeCheck + " is not a palindrome.");
+    }
+}
